@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: kcun
+  cloud:
+    config:
+      discovery:
+        enable: true
+      serviceeId: register-server
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/ssss?useSSL=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+
+
+server:
+  port: 8703
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ip-address}
+    instance-id: http://${spring.cloud.client.ip-address}:${server.port}
+
+mybatis:
+  type-aliases-package: com.qf
+  mapper-locations: classpath:mapper/*Mapper.xml

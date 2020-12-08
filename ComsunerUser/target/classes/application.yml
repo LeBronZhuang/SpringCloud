@@ -1,0 +1,17 @@
+server:
+  port: 8888
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+spring:
+  application:
+    name: comsuneruser
+
+swagger:
+  basepackage: com.fzl.controller
+  title: spring boot swagger
+  desc: swagger test
+  version: 1.0
+  contact: Mr.Fan 12345@qq.com
+  url: www.mi.com

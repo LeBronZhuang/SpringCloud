@@ -1,0 +1,18 @@
+server:
+  port: 3333
+spring:
+  application:
+    name: feignclient
+  cloud:
+    config:
+      discovery:
+        enable: true
+      serviceId: register-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ip-address}
+    instance-id: http://${spring.cloud.client.ip-address}:${server.port}

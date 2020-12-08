@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.KcunDao">
+    <select id="selectCar" resultType="com.qf.pojo.Kcun">
+        select * from kcun where kid=#{kid}
+
+    </select>
+    <select id="selectCarname" resultType="com.qf.pojo.Kcun">
+        select * from kcun where carname=#{carname}
+    </select>
+    <delete id="deleteCar">
+        delete from kcun where kid=#{kid}
+    </delete>
+    <!--通过主键修改数据-->
+    <update id="updateCar">
+        update kcun
+        <set>
+            <if test="carname != null and carname != ''">
+                carname = #{carname},
+            </if>
+            <if test="carnumber != null">
+                carnumber = #{carnumber},
+            </if>
+        </set>
+        where kid = #{kid}
+    </update>
+    <insert id="insertCar" keyProperty="kid" useGeneratedKeys="true" >
+        insert into kcun(carname, carnumber)
+        values ( #{carname}, #{carnumber})
+    </insert>
+    <select id="selectAll" resultType="com.qf.pojo.Kcun">
+        select * from kcun
+    </select>
+</mapper>

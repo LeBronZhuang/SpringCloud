@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.CxOrderDao">
+    <select id="cxOrderByOid" resultType="com.qf.pojo.ChaXOrder">
+        select orders.oid,orders.carname,orders.price,orders.number,`user`.username,`user`.tel from orders
+        INNER JOIN `user` on user.uid=orders.uid
+
+    </select>
+    <select id="cxAllOrder" resultType="com.qf.pojo.ChaXOrder">
+        select orders.oid,orders.carname,orders.price,orders.number,`user`.username from orders
+        INNER JOIN `user` on user.uid=orders.uid where orders.oid=#{oid}
+    </select>
+</mapper>

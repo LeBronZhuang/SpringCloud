@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Qx" />
+        <module name="CxOrder" />
+        <module name="Order" />
+        <module name="User" />
+        <module name="EurekaServer" />
+        <module name="Login" />
+        <module name="FeignClient" />
+        <module name="ComsunerUser" />
+        <module name="Kcun" />
+        <module name="PojoModule" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ComsunerUser" options="-parameters" />
+      <module name="CxOrder" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
+      <module name="FeignClient" options="-parameters" />
+      <module name="Kcun" options="-parameters" />
+      <module name="Login" options="-parameters" />
+      <module name="Order" options="-parameters" />
+      <module name="PojoModule" options="-parameters" />
+      <module name="Qx" options="-parameters" />
+      <module name="SpringCloudDemo03" options="-parameters" />
+      <module name="User" options="-parameters" />
+    </option>
+  </component>
+</project>
